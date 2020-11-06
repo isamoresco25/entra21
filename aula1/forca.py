@@ -37,7 +37,7 @@ def jogar():
         chute = ""
         while True:
             chute = input("Digite uma letra:")
-            if str(chute).isalpha() and len(chute) == 1:
+            if str(chute).isalpha() and len(chute) == 1 and chute not in letras_usadas:
                 letras_usadas.append(chute)
                 break
         
