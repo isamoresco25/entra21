@@ -66,4 +66,6 @@ if __name__ == "__main__":
     # 2 - Modificar as configurações
     # 3 - sair
     
+    # bonus: modificar o arquivo de configuração :D
+
     jogar()
