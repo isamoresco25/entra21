@@ -62,4 +62,6 @@ if __name__ == "__main__":
     # 2 - Modificar as configurações
     # 3 - sair
     
+    # https://realpython.com/quizzes/python-dicts/viewer/
+
     jogar()
