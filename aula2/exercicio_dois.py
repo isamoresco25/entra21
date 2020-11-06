@@ -25,3 +25,6 @@ elif (total > 500):
 
 # descubra qual o item mais caro da lista
 print(max(compras, key=compras.get))
+
+dicionario_ordenado = {k : compras[k] for k in sorted(compras)}
+print(dicionario_ordenado)
