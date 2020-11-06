@@ -35,11 +35,7 @@ def jogar():
         print(tentativa_palavra + "\n\n")
 
         chute = ""
-        while True:
-            chute = input("Digite uma letra:")
-            if str(chute).isalpha() and len(chute) == 1:
-                letras_usadas.append(chute)
-                break
+        chute = input("Digite uma letra:")
         
         if not chute in palavra:
             chances -= 1
