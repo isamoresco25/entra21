@@ -1,12 +1,25 @@
 from os import system, name 
 
+palavra = ""
+chances = 0
+
+def carregar_config():
+    global palavra
+    global chances
+    linhas_arquivo = []
+    with open('forca.cfg') as f:
+        for linha in f:
+            linhas_arquivo.append(linha.strip())
+    palavra = str(linhas_arquivo[0])
+    chances = int(linhas_arquivo[1])
+
 def jogar():
-    palavra = "abelha"
-    chances = 5
+    global palavra
+    global chances
+    carregar_config()
     letras_usadas = []
     while True:
         tentativa_palavra = ""
-
         # for windows 
         if name == 'nt': 
             system('cls') 
@@ -20,13 +33,18 @@ def jogar():
         for x in palavra:
             tentativa_palavra += x if x in letras_usadas else "_"
         print(tentativa_palavra + "\n\n")
-       
-        chute = input("Digite uma letra:")
-        letras_usadas.append(chute)
+
+        chute = ""
+        while True:
+            chute = input("Digite uma letra:")
+            if str(chute).isalpha() and len(chute) == 1:
+                letras_usadas.append(chute)
+                break
         
         if not chute in palavra:
             chances -= 1
-        
+
+        # temos um bug aqui =D        
         if chances == 0:
             print("Você perdeu!")
             break
@@ -36,4 +54,16 @@ def jogar():
 
 
 if __name__ == "__main__":
+    # implementar a função carregar_config
+    # implementar a função verifica_fim_jogo
+    # implementar a função limpar_tela
+
+    # previnir que o usuário digite números
+    # previnir que o usuário repita letras
+
+    # implementar menu de usuário com as seguintes opções:
+    # 1 - Jogar
+    # 2 - Modificar as configurações
+    # 3 - sair
+    
     jogar()
