@@ -4,13 +4,15 @@ class Banco():
     def __init__(self):
         pass
 
-class NuConta(Banco):
+class DataSaver():
     def __init__(self):
-        super().__init__()
+        pass
+    
+    @staticmethod
+    def savePessoa(pessoa:Pessoa):
+        p = Pessoa("Bruno", 29, "022.121.434-33")
+        return p
 
-class Viacredi(Banco):
-    def __init__(self):
-        super().__init__()
 
 class Conta():
     def __init__(self, banco:Banco, pessoa: Pessoa):
@@ -26,6 +28,9 @@ if __name__ == "__main__":
             3 - Visualizar Saldo
             4 - Fazer um depósito
             5 - Sair\n"""))
+
+        if(valor == 1):
+            print(DataSaver.savePessoa(Pessoa()))
 
         if(valor == 5):
             print("Agradecemos a sua visita!")

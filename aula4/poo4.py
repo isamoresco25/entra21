@@ -1,3 +1,4 @@
+
 class Animal:
     """
         Essa classe representa todos os animais do universo!
@@ -17,16 +18,22 @@ class Animal:
         Esse método apresenta o barulho do bichinho!
         """
 
+    "blablablabalbalba"
+
 class Pokemon(Animal):
     def __init__(self):
         pass
    
+class Digimon(Pokemon):
+    def __init__(self):
+        pass
 
 
 animal = Animal()
-print(animal.__doc__)
-print(animal.som.__doc__)
-print(animal.__module__)
+#print(animal.__doc__)
+#print(animal.som.__doc__)
+#print(animal.__module__)
 
-print(Pokemon.__bases__)
+
+print(Digimon.__bases__)
 print(Pokemon.__name__)
